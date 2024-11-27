@@ -20,31 +20,26 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
+    
+#define LCD_ORIENTATION 1 // 0 for bottom view, 1 for top view
 
 extern const int LCDaddy; // Base address with SA0 line pulled low (7-bits)
 extern const int LCDaddy_w; // Address + R/nW (0)
 extern const int LCDaddy_r; // Address + R/nW (1)
 
 /**
- * @brief Delays execution for a specified number of milliseconds.
- *
- * @param ms The number of milliseconds to delay.
- */
-void delay(int ms);
-
-/**
  * @brief Enables the I2C module and configures it for 7-bit addressing.
  *
  * This function must be called before using the I2C bus.
  */
-void enableIC2(void);
+void enable_I2C(void);
 
 /**
  * @brief Sets the baud rate generator for the I2C communication.
  *
  * This function sets the I2C communication speed to 100 kHz.
  */
-void setupBaudGenerator(void);
+void setup_I2C_Baud(void);
 
 /**
  * @brief Sends a command and data to the LCD using I2C.
@@ -55,7 +50,7 @@ void setupBaudGenerator(void);
  * This function issues a start condition, sends the control byte and data,
  * and then issues a stop condition to complete the I2C communication.
  */
-void lcd_cmd(char control_byte, char data);
+void lcd_send_command(char control_byte, char data);
 
 /**
  * @brief Initializes the LCD with the specified startup sequence.
@@ -63,7 +58,7 @@ void lcd_cmd(char control_byte, char data);
  * This function sends a series of initialization commands to the LCD
  * to set it up for operation, followed by a clear display command.
  */
-void initLCD(void);
+void lcd_init(void);
 
 /**
  * @brief Prints a null-terminated string to the LCD.
@@ -73,14 +68,14 @@ void initLCD(void);
  * This function iterates through each character of the string and sends
  * it to the LCD using the lcd_cmd function.
  */
-void lcd_printStr(const char s[]);
+void lcd_print_string(const char s[]);
 
 /**
  * @brief Configures the display to double height with two lines.
  *
  * This function sets the LCD to display characters in double height mode.
  */
-void setDoubleHeight(void);
+void lcd_set_double_height(void);
 
 /**
  * @brief Sets the ROM to C for displaying Japanese Katakana characters.
@@ -88,7 +83,7 @@ void setDoubleHeight(void);
  * This function configures the LCD to use a specific ROM set suitable
  * for displaying Katakana characters.
  */
-void setROMC(void);
+void lcd_set_ROM_C(void);
 
 /**
  * @brief Sets the cursor on the LCD to the provided row and column
@@ -99,7 +94,7 @@ void setROMC(void);
  * This function moves the cursor to the provided coordinates. Expects
  * input from 0-3 for the row and 0-9 for the column.
  */
-void setCursor(int row, int column);
+void lcd_set_cursor(int row, int column);
 
 /**
  * @brief Sets up a heartbeat LED for debugging purposes.
@@ -108,9 +103,18 @@ void setCursor(int row, int column);
  * it to low (LED off). It is used to provide visual feedback during
  * debugging.
  */
-void setupHeartbeat(void);
 
-void unsignedIntToString(unsigned int num, char* str);
+void lcd_clear(void);
+
+void lcd_set_cursor(int cursor_row, int cursor_column);
+
+void lcd_print_int(const unsigned int value);
+
+void lcd_print_char(const char c);
+
+void setup_heartbeat_LED(void);
+
+void unsigned_int_to_string(unsigned int num, char* str);
 
 #ifdef	__cplusplus
 }

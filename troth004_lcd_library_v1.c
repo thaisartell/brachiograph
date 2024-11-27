@@ -1,126 +1,131 @@
-/*
- * File:   troth004_lab5a_library_v001.c
- * Author: ryoth
- *
- * Created on October 18, 2024, 11:52 AM
- */
-
-
 #include "xc.h"
+#include "troth004_utils.h"
+#include "troth004_lcd_library_v1.h"
 
-const int LCDaddy = 0b00111100; // Base address with SA0 line pulled low (7-bits)
-const int LCDaddy_w = 0b01111000; // Address + R/nW (0)
-const int LCDaddy_r = 0b01111011; // Address + R/nW (1)
+// Constants
+const int LCD_BASE_ADDRESS = 0b00111100; // Base address with SA0 line pulled low (7-bits)
+const int LCD_WRITE_ADDR = 0b01111000;  // Address + R/nW (0)
+const int LCD_READ_ADDR = 0b01111011;   // Address + R/nW (1)
 
-void enableIC2(void) {
+// Functions
+void enable_I2C(void) {
     _RCDIV = 0;
-    I2C1CONbits.I2CEN = 0; // Disable I2C module first to set up
-    I2C1CONbits.A10M = 0; // 7-bit addressing mode
-    I2C1CONbits.DISSLW = 1; // Disable slew rate control for standard speed (100 kHz)
-    I2C1CONbits.I2CEN = 1; // Enable I2C module
-    while (I2C1STATbits.TRSTAT); // Wait for I2C bus to become idle
+    I2C2CONbits.I2CEN = 0;
+    I2C2CONbits.A10M = 0;
+    I2C2CONbits.DISSLW = 1;
+    I2C2CONbits.I2CEN = 1;
+    while (I2C2STATbits.TRSTAT);
 }
 
-void setupBaudGenerator(void) {
-    I2C1CONbits.I2CEN = 0; // Disable I2C module first to set up
-    I2C1BRG = 157;   // 100 kHz as per datasheet
-    I2C1CONbits.I2CEN = 1; // Disable I2C module first to set up
+void setup_I2C_Baud(void) {
+    I2C2CONbits.I2CEN = 0;
+    I2C2BRG = 157;
+    I2C2CONbits.I2CEN = 1;
 }
 
-void lcd_cmd(char control_byte, char data) {
-    while (I2C1STATbits.TRSTAT); // Wait for the bus to become idle
+void lcd_send_command(char control_byte, char data) {
+    while (I2C2STATbits.TRSTAT);
+    I2C2CONbits.SEN = 1;
+    while (I2C2CONbits.SEN);
 
-    I2C1CONbits.SEN = 1;  // Start condition
-    while (I2C1CONbits.SEN);  // Wait for the start to complete
+    I2C2TRN = LCD_WRITE_ADDR;
+    IFS3bits.MI2C2IF = 0;
+    while (!IFS3bits.MI2C2IF);
+    while (I2C2STATbits.TBF || I2C2STATbits.ACKSTAT);
 
-    I2C1TRN = LCDaddy_w;  // Send device address + write
-    IFS1bits.MI2C1IF = 0;
-    while (!IFS1bits.MI2C1IF)
-    while (I2C1STATbits.TBF || I2C1STATbits.ACKSTAT);  // Wait for transmission to complete
+    I2C2TRN = control_byte;
+    IFS3bits.MI2C2IF = 0;
+    while (!IFS3bits.MI2C2IF);
+    while (I2C2STATbits.TBF || I2C2STATbits.ACKSTAT);
 
-    I2C1TRN = control_byte;  // Send control byte
-    IFS1bits.MI2C1IF = 0;
-    while (!IFS1bits.MI2C1IF)
-    while (I2C1STATbits.TBF || I2C1STATbits.ACKSTAT);  // Wait for transmission to complete
+    I2C2TRN = data;
+    IFS3bits.MI2C2IF = 0;
+    while (!IFS3bits.MI2C2IF);
+    while (I2C2STATbits.TBF || I2C2STATbits.ACKSTAT);
 
-    I2C1TRN = data;  // Send data
-    IFS1bits.MI2C1IF = 0;
-    while (!IFS1bits.MI2C1IF)
-    while (I2C1STATbits.TBF || I2C1STATbits.ACKSTAT);  // Wait for transmission to complete
-
-    I2C1CONbits.PEN = 1;  // Stop condition
-    while (I2C1CONbits.PEN);  // Wait for the stop condition
+    I2C2CONbits.PEN = 1;
+    while (I2C2CONbits.PEN);
 }
 
-void initLCD(void) {
-    enableIC2();
-    setupBaudGenerator();
+void lcd_clear() {
+    lcd_send_command(0x00, 0x01);   
+}
+
+void lcd_init(void) {
+    enable_I2C();
+    setup_I2C_Baud();
     
-    char commands[11] = {0x3A, 0x09, 0x06, 0x1E, 0x39, 0x1B, 0x6E, 0x56, 0x7A, 0x38, 0x0F};
-    
+    char lcd_orientation_byte = 0x06; // Bottom view by default
+    if (LCD_ORIENTATION) {
+        lcd_orientation_byte = 0x05; // Top view if selected
+    }
+    char commands[11] = {0x3A, 0x09, lcd_orientation_byte, 0x1E, 0x39, 0x1B, 0x6E, 0x56, 0x7A, 0x38, 0x0F};
+
     for (int i = 0; i < 11; i++) {
-        lcd_cmd(0x00, commands[i]);
+        lcd_send_command(0x00, commands[i]);
         delay_ms(5);
     }
-    
-    lcd_cmd(0x00, 0x01); //Clear display
+    lcd_clear();
 }
 
-void lcd_printStr(const char s[]) {
-    int i = 0;
+void lcd_print_char(const char c) {
+    lcd_send_command(0x40, c);
+}
 
-    // Loop through each character of the string until NULL terminator is encountered
+void lcd_print_string(const char s[]) {
+    int i = 0;
     while (s[i] != '\0') {
-        lcd_cmd(0x40, s[i]);
+        lcd_print_char(s[i]);
         i++;
     }
 }
 
-void setDoubleHeight(void) {
-    lcd_cmd(0x00, 0x3A);
-    lcd_cmd(0x00, 0x1B);
-    lcd_cmd(0x00, 0x3C);
+void lcd_print_int(const unsigned int value) {
+    char string_buffer[6];
+    unsigned_int_to_string(value, string_buffer);
+    lcd_print_string(string_buffer);
 }
 
-void setROMC(void) {
-    lcd_cmd(0x00, 0x3A);
-    lcd_cmd(0x00, 0x72);
-    lcd_cmd(0x40, 0x0C);
-    lcd_cmd(0x00, 0x3C);
+void lcd_set_double_height(void) {
+    lcd_send_command(0x00, 0x3A);
+    lcd_send_command(0x00, 0x1B);
+    lcd_send_command(0x00, 0x3C);
 }
 
-void setCursor(int row, int column) {
-    lcd_cmd(0x00, 0x80 + (row << 4) + column);
+void lcd_set_ROM_C(void) {
+    lcd_send_command(0x00, 0x3A);
+    lcd_send_command(0x00, 0x72);
+    lcd_send_command(0x40, 0x0C);
+    lcd_send_command(0x00, 0x3C);
 }
 
-void setupHeartbeat(void) {
-    // Configure RB15 as output for LED
-    TRISBbits.TRISB15 = 0; // Set RB15 as output
-    LATBbits.LATB15 = 0;   // Initialize RB15 to low (LED off)
+void lcd_set_cursor(int cursor_row, int cursor_column) {
+    char command = 0x80 + (cursor_row << 4) + cursor_column;
+    if (LCD_ORIENTATION) {
+        command += 10;
+    }
+    lcd_send_command(0x00, command);
 }
 
-void unsignedIntToString(unsigned int num, char* str) {
-    // Initialize the string index
+void setup_heartbeat_LED(void) {
+    TRISBbits.TRISB15 = 0;
+    LATBbits.LATB15 = 0;
+}
+
+void unsigned_int_to_string(unsigned int value, char* output_str) {
     int i = 0;
-
-    // Handle the special case for 0
-    if (num == 0) {
-        str[i++] = '0';
+    if (value == 0) {
+        output_str[i++] = '0';
     } else {
-        // Extract digits in reverse order
-        while (num > 0) {
-            str[i++] = (num % 10) + '0'; // Convert digit to character
-            num /= 10;                    // Remove last digit
+        while (value > 0) {
+            output_str[i++] = (value % 10) + '0';
+            value /= 10;
         }
     }
-
-    // Reverse the string to get the correct order
-    str[i] = '\0'; // Null-terminate the string
-
-    // Reverse the characters in the string
+    output_str[i] = '\0';
     for (int j = 0; j < i / 2; j++) {
-        char temp = str[j];
-        str[j] = str[i - j - 1];
-        str[i - j - 1] = temp;
+        char temp = output_str[j];
+        output_str[j] = output_str[i - j - 1];
+        output_str[i - j - 1] = temp;
     }
 }

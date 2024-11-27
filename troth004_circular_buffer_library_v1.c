@@ -1,6 +1,8 @@
 #include "xc.h"
 #include "troth004_circular_buffer_library_v1.h"
 
+int AVERAGE_COUNT = 3;
+
 volatile unsigned int inner_buffer[BUFFER_SIZE];
 volatile unsigned int outer_buffer[BUFFER_SIZE];
 volatile unsigned int inner_index = 0;

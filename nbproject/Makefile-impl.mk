@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=troth004_project_troubleshooting.X
+PROJECTNAME=brachiograph
 
 # Active Configuration
 DEFAULTCONF=default

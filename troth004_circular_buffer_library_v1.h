@@ -8,8 +8,9 @@
 #ifndef TROTH004_CIRCULAR_BUFFER_LIBRARY_V1_H
 #define	TROTH004_CIRCULAR_BUFFER_LIBRARY_V1_H
 
-#define BUFFER_SIZE 128 // Max size, assuming sample rate may change during runtime
-#define AVERAGE_COUNT 3
+#define BUFFER_SIZE 128  // Max size, assuming sample rate may change during runtime
+
+extern int AVERAGE_COUNT;
 
 extern volatile unsigned int inner_buffer[BUFFER_SIZE];
 extern volatile unsigned int outer_buffer[BUFFER_SIZE];
@@ -21,7 +22,7 @@ extern volatile unsigned long outer_average;
 #ifdef	__cplusplus
 extern "C" {
 #endif
-    void init_buffers();		// set all buffer vals to zero
+    void init_buffers();                        // set all buffer vals to zero
 	void put_val_inner(unsigned int new_val);	// add a new value to the buffer
     void put_val_outer(unsigned int new_val);	// add a new value to the buffer
     

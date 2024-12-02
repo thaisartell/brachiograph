@@ -41,10 +41,6 @@ void init_adc(void){
     IEC0bits.AD1IE = 1;
 }
 
-void init_joystick(void){
-    
-}
-
 void joystick_send_to_lcd(void){
     
 }

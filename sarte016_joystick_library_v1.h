@@ -14,6 +14,8 @@ extern "C" {
 
     void init_pic24(void);
     void init_joystick(void);
+    void joystick_send_to_lcd(void);
+    void pen_shift(void);
     
     
 

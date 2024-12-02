@@ -41,11 +41,11 @@ void init_adc(void){
     IEC0bits.AD1IE = 1;
 }
 
-void joystick_send_to_lcd(void){
+void joystick_send_to_lcd(){
     
 }
 
-void pen_shift(void){
+void pen_shift(){
     
 }
 
@@ -58,10 +58,6 @@ void __attribute((interrupt, auto_psv)) _AD1Interrupt(void){
     IFS0bits.AD1IF = 0;
 }
 
-void pen_shift(void){
-    
-}
-
 int main(){
     enable_I2C();
     init_pic24();
@@ -69,12 +65,10 @@ int main(){
     
     
     while (1) {
-        if (joystick_button_pressed){
-            pen_shift();
-        }
         
-        joystick_send_to_lcd(void);
+        joystick_send_to_lcd();
+        
     }
     
-    return 1;
+    return 0;
 }

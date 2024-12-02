@@ -1,4 +1,5 @@
 #include "xc.h"
+#include <stdio.h>
 #include "sarte016_joystick_library_v1.h"
 #include "troth004_utils.h"
 #include "troth004_lcd_library_v1.h"
@@ -51,24 +52,39 @@ void pen_shift(){
 
 //SEL -> AN2
 //Interrupt detects button clicks. Button click controls pen up/down
-void __attribute((interrupt, auto_psv)) _AD1Interrupt(void){
+void __attribute((interrupt, auto_psv)) _ADC1Interrupt(void){
+    IFS0bits.AD1IF = 0;
     joystick_x = ADC1BUF0;
     joystick_y = ADC1BUF1;
     joystick_sel = ADC1BUF2;
-    IFS0bits.AD1IF = 0;
 }
 
-int main(){
-    enable_I2C();
-    init_pic24();
-    init_joystick();
+void __attribute__((interrupt, auto_psv)) _T1Interrupt(void){
+    _T1IF = 0;
     
+    lcd_set_cursor(0,0);
+    sprintf(joystick_x, "%.3f");
+    lcd_print_string(joystick_x);
     
-    while (1) {
-        
-        joystick_send_to_lcd();
-        
-    }
+    lcd_set_cursor(1,0);
+    sprintf(joystick_y, "%.3f");
+    lcd_print_string(joystick_y);
     
-    return 0;
 }
+
+//int main(){
+//    enable_I2C();
+//    setup_I2C_Baud();
+//    
+//    init_pic24();
+//    init_joystick();
+//    
+//    
+//    while (1) {
+//        
+//        joystick_send_to_lcd();
+//        
+//    }
+//    
+//    return 0;
+//}

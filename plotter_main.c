@@ -49,7 +49,7 @@ int main(void) {
             update_servo_angles(1);
 
             delay_ms(DELAY_TIME); // Wait
-            LATBbits.LATB15 ^= 1; // Toggle RB15 (heartbeat LED)
+            LATBbits.LATB6 ^= 1; // Toggle RB15 (heartbeat LED)
         }
     }
 

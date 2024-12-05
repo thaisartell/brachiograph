@@ -114,8 +114,8 @@ void lcd_set_cursor(int cursor_row, int cursor_column) {
 }
 
 void setup_heartbeat_LED(void) {
-    TRISBbits.TRISB15 = 0;
-    LATBbits.LATB15 = 0;
+    TRISBbits.TRISB6 = 0;
+    LATBbits.LATB6 = 0;
 }
 
 void unsigned_int_to_string(unsigned int value, char* output_str) {

@@ -100,10 +100,10 @@ void lcd_clear(void);
  * The address needs to be incremented by 10 when the LCD is in vertical mode.
  * This is done automatically by the function.
  */
-void lcd_set_cursor(int cursor_row, int cursor_column)
+void lcd_set_cursor(int cursor_row, int cursor_column);
 
 /**
- * @brief Sets up a heartbeat LED for debugging purposes.
+ * @brief Sets up a heartbeat LED for debugging purposes (RB6).
  *
  * This function configures the RB15 pin as an output and initializes
  * it to low (LED off). It is used to provide visual feedback during

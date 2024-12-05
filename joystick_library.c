@@ -83,3 +83,4 @@ void set_x_pos(void){
 
 void set_y_pos(void){
     y_pos = get_raw_y();
+}

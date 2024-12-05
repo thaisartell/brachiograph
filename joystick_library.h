@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* 
  * File:   sarte016_joystick_library_v1.h
  * Author: thai
@@ -27,7 +26,6 @@ extern "C" {
 
 #endif	/* SARTE016_JOYSTICK_LIBRARY_V1_H */
 
-=======
 /* 
  * File:   sarte016_joystick_library_v1.h
  * Author: thai
@@ -55,5 +53,3 @@ extern "C" {
 #endif
 
 #endif	/* SARTE016_JOYSTICK_LIBRARY_V1_H */
-
->>>>>>> 5b9b20fce1f3e7ab5a79c3e83cd2f8d4444519fb

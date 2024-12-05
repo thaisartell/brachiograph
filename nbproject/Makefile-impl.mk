@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=sarte016_troth004_brachiograph.X
+PROJECTNAME=brachiograph
 
 # Active Configuration
 DEFAULTCONF=default

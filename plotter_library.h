@@ -31,7 +31,14 @@ extern volatile int raw_x;
 extern volatile int raw_y;
 
 // Function Declarations
-void delay_ms(unsigned int ms);
+
+/**
+ * @brief Initializes a PWM signal to be sent to RP14 and RP13
+ * RP14 corresponds to the outer servo.
+ * RP13 corresponds to the inner servo.
+ *
+ * This function must be called before using the servos.
+ */
 void init_servos(void);
 void init_test_pattern_button(void);
 void __attribute__((__interrupt__, auto_psv)) _IC1Interrupt(void);

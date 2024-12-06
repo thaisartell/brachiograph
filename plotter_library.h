@@ -18,10 +18,31 @@ extern "C" {
 #define ARCTAN_TABLE_SIZE 1024
 
 // Constants
+/**
+ * @brief Sets the OC1R register for PWM control.
+ * Must be set to 40000 at F_CY = 16 MHz for servo to function properly.
+ */
 static const int SERVO_PERIOD = 40000; // Prescale 8: 20ms
-static const int DELAY_TIME = 50;    // in ms, minimum 30 for LCD to work
+
+/**
+ * @brief The amount of time, in ms, to delay between each move operation.
+ * Minimum 30ms for LCD to work.
+ */
+static const int DELAY_TIME = 50;
+
+/**
+ * @brief Controls how quickly the test pattern moves. 
+ * Lower values makes it go more quickly.
+ */
 static const int CYCLES_TO_TRAVEL = 10;
-static const int X_OFFSET = 128;
+
+/**
+ * @brief The minimum value that the x coordinate can be.
+ * This value must be capped because (0,0) is the outer servo.
+ * Y could also be clamped, or some other logic could be used to prevent collision.
+ * Capping X is a simple solution to prevent collision.
+ */
+static const int X_MIN = 128;
 
 // Global Variables
 extern const unsigned int inner_angle_table[1447];

@@ -5,6 +5,7 @@
  */
 
 #include "xc.h"
+#include "plotter_utils.h"
 #include "lcd_library.h"
 #include "circular_buffer_library.h"
 #include "plotter_library.h"
@@ -35,9 +36,6 @@ int main(void) {
     set_servo(32768);
     set_servo2(32768);
     delay_ms(DELAY_TIME);
-    
-    // Set to run test pattern first
-    run_test_pattern_flag = 0;
     
     while (1) {
         if (run_test_pattern_flag) {

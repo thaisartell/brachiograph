@@ -45,10 +45,34 @@ static const int CYCLES_TO_TRAVEL = 10;
 static const int X_MIN = 128;
 
 // Global Variables
+
+/**
+ * @brief Look up table for the inner angle.
+ * Use the distance function as input.
+ * Pre-calculated using python.
+ */
 extern const unsigned int inner_angle_table[1447];
+
+/**
+ * @brief Look up table for arctan.
+ * Use (x<<16/y) or (y<<16/x) as input, whichever is smaller.
+ * Pre-calculated using python.
+ */
 extern const unsigned int arctan_table[ARCTAN_TABLE_SIZE];
+
+/**
+ * @brief Flag set by IC1 to run the test pattern.
+ */
 extern volatile int run_test_pattern_flag;
+
+/**
+ * @brief The raw x value, modified by the ADC.
+ */
 extern volatile int raw_x;
+
+/**
+ * @brief The raw y value, modified by the ADC.
+ */
 extern volatile int raw_y;
 
 // Function Declarations

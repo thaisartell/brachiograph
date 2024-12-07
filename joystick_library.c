@@ -16,24 +16,23 @@ volatile int joystick_sel = 0;
 
 volatile int x_time;
 volatile int y_time;
-volatile int timesave[2] = {0,0};
 
-void init_ports(void){
-    // HOR -> AN0
-    AD1PCFGbits.PCFG0 = 0;
+void init_joystick(void){
+        // HOR -> pin 24 (RP13, AN11)
+    TRISBbits.TRISB11 = 1;
+    AD1PCFGbits.PCFG11 = 0;
     AD1CSSLbits.CSSL0 = 1;
     
-    // VERT -> AN1
-    AD1PCFGbits.PCFG1 = 0;
+    // VERT -> pin 23(RP12, AN12)
+    TRISBbits.TRISB12 = 1;
+    AD1PCFGbits.PCFG12 = 0;
     AD1CSSLbits.CSSL1 = 1;
     
-    // SEL -> AN2
+    // SEL -> [tbd]
+    //TRISBbits.TRISBxx = 1;
     AD1PCFGbits.PCFG2 = 0;
     AD1CSSLbits.CSSL2 = 1;
     
-}
-
-void init_adc(void){
     //AD1CON1, 2, 3
     AD1CON1 = 0;
     AD1CON1bits.FORM = 0;
@@ -50,10 +49,14 @@ void init_adc(void){
     
     IFS0bits.AD1IF = 0;
     IEC0bits.AD1IE = 1;
-}
-
-void joystick_send_to_lcd(){
     
+    //TIMER1 Config
+    T1CON = 0;
+    T1CONbits.TCKPS = 0b11;
+    PR1 = 31250;
+    IFS0bits.T1IF = 0;
+    IEC0bits.T1IE = 1;
+    T1CONbits.TON = 1;
 }
 
 //SEL -> AN2
@@ -62,6 +65,7 @@ void __attribute((interrupt, auto_psv)) _ADC1Interrupt(void){
     IFS0bits.AD1IF = 0;
     joystick_x_vector = ADC1BUF0 - 512;
     joystick_y_vector = ADC1BUF1 - 512;
+    AD1CON1bits.SAMP = 1;
 }
 
 void __attribute__((interrupt, auto_psv)) _T1Interrupt(void){

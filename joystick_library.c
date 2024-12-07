@@ -1,10 +1,12 @@
 #include "xc.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include "joystick_library.h"
 #include "plotter_utils.h"
 #include "lcd_library.h"
 
 #define LCD_ADDRESS 0x78
+#define DEADZONE 20
 
 volatile int joystick_x_vector = 0;
 volatile int joystick_y_vector = 0;
@@ -63,8 +65,13 @@ void init_joystick(void){
 //Interrupt detects button clicks. Button click controls pen up/down
 void __attribute((interrupt, auto_psv)) _ADC1Interrupt(void){
     IFS0bits.AD1IF = 0;
-    joystick_x_vector = ADC1BUF0 - 512;
-    joystick_y_vector = ADC1BUF1 - 512;
+    
+    volatile int x_raw = ADC1BUF0 - 512;
+    volatile int y_raw = ADC1BUF1 - 512;
+    
+    joystick_x_vector = (abs(x_raw) < DEADZONE) ? 0 : x_raw;
+    joystick_y_vector = (abs(y_raw) < DEADZONE) ? 0 : y_raw;
+
     AD1CON1bits.SAMP = 1;
 }
 

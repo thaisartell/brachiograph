@@ -28,6 +28,7 @@ int main(void) {
     init_buffers();
     init_servos();
     init_test_pattern_button();
+    init_joystick();
     
     setup_heartbeat_LED();
     lcd_init();
@@ -45,9 +46,10 @@ int main(void) {
         else {
 
             update_servo_angles(1);
+//            lcd_print_int(joystick_x_vector);
 
             delay_ms(DELAY_TIME); // Wait
-            LATBbits.LATB6 ^= 1; // Toggle RB15 (heartbeat LED)
+//            LATBbits.LATB6 ^= 1; // Toggle RB15 (heartbeat LED)
         }
     }
 

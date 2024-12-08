@@ -14,11 +14,6 @@ volatile int joystick_y_vector = 0;
 volatile int x_pos;
 volatile int y_pos;
 
-volatile int joystick_sel = 0;
-
-volatile int x_time;
-volatile int y_time;
-
 void init_joystick(void){
         // HOR -> pin 24 (RP13, AN11)
     TRISBbits.TRISB11 = 1;
@@ -54,7 +49,7 @@ void init_joystick(void){
     
     //TIMER1 Config
     T1CON = 0;
-    T1CONbits.TCKPS = 0b11;
+    T1CONbits.TCKPS = 0b00;
     PR1 = 31250;
     IFS0bits.T1IF = 0;
     IEC0bits.T1IE = 1;
@@ -66,9 +61,10 @@ void init_joystick(void){
 void __attribute((interrupt, auto_psv)) _ADC1Interrupt(void){
     IFS0bits.AD1IF = 0;
     
-    volatile int x_raw = ADC1BUF0 - 512;
-    volatile int y_raw = ADC1BUF1 - 512;
+    volatile int x_raw = ADC1BUFB - 512;
+    volatile int y_raw = ADC1BUFC - 512;
     
+    //If movement is within joystick deadzone, neglect
     joystick_x_vector = (abs(x_raw) < DEADZONE) ? 0 : x_raw;
     joystick_y_vector = (abs(y_raw) < DEADZONE) ? 0 : y_raw;
 
@@ -78,13 +74,16 @@ void __attribute((interrupt, auto_psv)) _ADC1Interrupt(void){
 void __attribute__((interrupt, auto_psv)) _T1Interrupt(void){
     _T1IF = 0;
     
+    char adstrx[20];
+    char adstry[20];
+    
     lcd_set_cursor(0,0);
-    sprintf((joystick_x_vector * x_time) + x_pos, "%.3f");
-    lcd_print_string(x_pos);
+    sprintf(adstrx, "%6.4f", joystick_x_vector + x_pos);
+    lcd_print_int(x_pos);
     
     lcd_set_cursor(1,0);
-    sprintf((joystick_x_vector * y_time) + y_pos, "%.3f");
-    lcd_print_string(y_pos);
+    sprintf(adstry, "%6.4f", joystick_x_vector + y_pos);
+    lcd_print_int(y_pos);
     
 }
 

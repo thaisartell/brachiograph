@@ -22,9 +22,9 @@ def generate_circle_commands(center_x, center_y, radius, num_points):
     return c_commands
 
 # Example usage
-center_x = 512  # Center of the circle (X)
-center_y = 512  # Center of the circle (Y)
-radius = 256     # Radius of the circle
+center_x = 512*64  # Center of the circle (X)
+center_y = 512*64  # Center of the circle (Y)
+radius = 256*64     # Radius of the circle
 num_points = 16  # Number of points to approximate the circle
 
 commands = generate_circle_commands(center_x, center_y, radius, num_points)

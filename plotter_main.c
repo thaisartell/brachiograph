@@ -31,6 +31,7 @@ int main(void) {
     
     setup_heartbeat_LED();
     lcd_init();
+    init_joystick();
    
     // Set servos to 90 90, starting position.
     set_servo(32768);
@@ -43,7 +44,6 @@ int main(void) {
             run_test_pattern_flag = 0;
         }
         else {
-
             update_servo_angles(1);
 
             delay_ms(DELAY_TIME); // Wait

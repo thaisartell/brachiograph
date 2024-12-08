@@ -20,13 +20,13 @@ volatile int raw_y = 1023;       // Starting position for y
 void init_servos() {
     _RCDIV = 0;
     __builtin_write_OSCCONL(OSCCON & 0xbf); // Unlock PPS
-    RPOR7bits.RP14R = 18;                    // Map RP14 to OC1 (servo1)
-    RPOR6bits.RP13R = 19;                   // Map RP13 to OC2 (servo2)
+    RPOR7bits.RP15R = 18;                    // Map RP15 to OC1 (servo1)
+    RPOR7bits.RP14R = 19;                   // Map RP14 to OC2 (servo2)
     __builtin_write_OSCCONL(OSCCON | 0x40); // Lock PPS
 
     AD1PCFG = 0xFFFF;                        // Set all pins digital
-    TRISBbits.TRISB14 = 0;                   // Set RP14 to output (servo1)
-    TRISBbits.TRISB13 = 0;                   // Set RP13 to output (servo2)
+    TRISBbits.TRISB15 = 0;                   // Set RP15 to output (servo1)
+    TRISBbits.TRISB14 = 0;                   // Set RP14 to output (servo2)
 
     TMR3 = 0;                                // Reset timer
     PR3 = SERVO_PERIOD;                      // Set period
@@ -140,7 +140,7 @@ void move_to(int new_x, int new_y, int cycles_to_travel) {
 }
 
 void update_servo_angles(int print_to_lcd) {
-    // Limit x to the range [64, 512]
+    // Limit x to the range [128, 1023]
     int x = MAX(X_MIN, raw_x);
     int y = raw_y;
     
@@ -190,30 +190,30 @@ void update_servo_angles(int print_to_lcd) {
 void run_test_pattern() {
     for (int i = 0; i < 5; i++) { 
         // Square
-        move_to(693,693,CYCLES_TO_TRAVEL);
-        move_to(331,693,CYCLES_TO_TRAVEL);
-        move_to(331,331,CYCLES_TO_TRAVEL);
-        move_to(693,331,CYCLES_TO_TRAVEL);
+//        move_to(693,693,CYCLES_TO_TRAVEL);
+//        move_to(331,693,CYCLES_TO_TRAVEL);
+//        move_to(331,331,CYCLES_TO_TRAVEL);
+//        move_to(693,331,CYCLES_TO_TRAVEL);
 
 
         //Circle (16-point)
-//        move_to(693,693,CYCLES_TO_TRAVEL);
-//        move_to(609, 748, CYCLES_TO_TRAVEL);
-//        move_to(512, 768, CYCLES_TO_TRAVEL);
-//        move_to(414, 748, CYCLES_TO_TRAVEL);
-//        move_to(330, 693, CYCLES_TO_TRAVEL);
-//        move_to(275, 609, CYCLES_TO_TRAVEL);
-//        move_to(256, 512, CYCLES_TO_TRAVEL);
-//        move_to(275, 414, CYCLES_TO_TRAVEL);
-//        move_to(330, 330, CYCLES_TO_TRAVEL);
-//        move_to(414, 275, CYCLES_TO_TRAVEL);
-//        move_to(511, 256, CYCLES_TO_TRAVEL);
-//        move_to(609, 275, CYCLES_TO_TRAVEL);
-//        move_to(693, 330, CYCLES_TO_TRAVEL);
-//        move_to(748, 414, CYCLES_TO_TRAVEL);
-//        move_to(768, 512, CYCLES_TO_TRAVEL);
-//        move_to(748, 609, CYCLES_TO_TRAVEL);
-//        move_to(693, 693, CYCLES_TO_TRAVEL);
+        move_to(693,693,CYCLES_TO_TRAVEL);
+        move_to(609, 748, CYCLES_TO_TRAVEL);
+        move_to(512, 768, CYCLES_TO_TRAVEL);
+        move_to(414, 748, CYCLES_TO_TRAVEL);
+        move_to(330, 693, CYCLES_TO_TRAVEL);
+        move_to(275, 609, CYCLES_TO_TRAVEL);
+        move_to(256, 512, CYCLES_TO_TRAVEL);
+        move_to(275, 414, CYCLES_TO_TRAVEL);
+        move_to(330, 330, CYCLES_TO_TRAVEL);
+        move_to(414, 275, CYCLES_TO_TRAVEL);
+        move_to(511, 256, CYCLES_TO_TRAVEL);
+        move_to(609, 275, CYCLES_TO_TRAVEL);
+        move_to(693, 330, CYCLES_TO_TRAVEL);
+        move_to(748, 414, CYCLES_TO_TRAVEL);
+        move_to(768, 512, CYCLES_TO_TRAVEL);
+        move_to(748, 609, CYCLES_TO_TRAVEL);
+        move_to(693, 693, CYCLES_TO_TRAVEL);
         
         // Horizontal Line
 //        move_to(1023, 512, CYCLES_TO_TRAVEL);

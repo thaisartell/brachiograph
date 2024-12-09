@@ -48,11 +48,28 @@ int main(void) {
             AD1CON1bits.ADON = 1;
         }
         else {
-            
             update_servo_angles(1);
             
-            raw_x += x_vel;
-            raw_y += y_vel;
+            raw_x += 15 - x_vel;
+            raw_y += 16 - y_vel;
+            if (raw_x > 1023) {
+                raw_x = 1023;
+            }
+            if (raw_x < 0) {
+                raw_x = 0;
+            }
+            if (raw_y > 1023) {
+                raw_y = 1023;
+            }
+            if (raw_y < 0) {
+                raw_y = 0;
+            }
+            
+            
+            lcd_print_int(x_vel);
+            lcd_print_char(',');
+            lcd_print_char(' ');
+            lcd_print_int(y_vel);     
             
             delay_ms(DELAY_TIME); // Wait
             LATBbits.LATB6 ^= 1; // Toggle RB15 (heartbeat LED)

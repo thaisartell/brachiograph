@@ -73,13 +73,13 @@ Default Scalar Model: Small
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200               0x174           0x22e  (558)
-.const                       0x374              0x136c          0x1d22  (7458)
-.text                       0x16e0               0x8f0           0xd68  (3432)
-.dinit                      0x1fd0                0x2c            0x42  (66)
-.text                       0x1ffc                0x20            0x30  (48)
+.text                        0x200               0x15c           0x20a  (522)
+.const                       0x35c              0x136c          0x1d22  (7458)
+.text                       0x16c8               0x91c           0xdaa  (3498)
+.dinit                      0x1fe4                0x2c            0x42  (66)
+.text                       0x2010                0x20            0x30  (48)
 
-                 Total "program" memory used (bytes):         0x2d2a  (11562) 17%
+                 Total "program" memory used (bytes):         0x2d48  (11592) 17%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
@@ -152,91 +152,91 @@ External Symbols in Program Memory (by address):
                   0x000252                  __data_init_standard
                   0x0002c8                  __IC1Interrupt
                   0x0002e0                  __ADC1Interrupt
-                  0x000330                  __DefaultInterrupt
-                  0x000336                  ___divsi3
-                  0x000354                  ___udivsi3
-                  0x00037c                  _inner_angle_table
-                  0x000eca                  _arctan_table
-                  0x0016da                  _LCD_BASE_ADDRESS
-                  0x0016dc                  _LCD_WRITE_ADDR
-                  0x0016de                  _LCD_READ_ADDR
-                  0x0016e0                  _init_servos
-                  0x001754                  _init_test_pattern_button
-                  0x0017a2                  _set_servo
-                  0x0017ce                  _set_servo2
-                  0x001804                  _distance
-                  0x001920                  _calculate_inner_angle
-                  0x001938                  _calculate_arctan_index
-                  0x00197e                  _calculate_outer_angle
-                  0x0019ca                  _move_to
-                  0x001a64                  _update_servo_angles
-                  0x001afa                  _run_test_pattern
-                  0x001bb8                  _enable_I2C
-                  0x001bda                  _setup_I2C_Baud
-                  0x001be8                  _lcd_send_command
-                  0x001c84                  _lcd_clear
-                  0x001c90                  _lcd_init
-                  0x001cee                  _lcd_print_char
-                  0x001cfc                  _lcd_print_string
-                  0x001d22                  _lcd_print_int
-                  0x001d34                  _lcd_set_double_height
-                  0x001d4c                  _lcd_set_ROM_C
-                  0x001d6a                  _lcd_set_cursor
-                  0x001d92                  _setup_heartbeat_LED
-                  0x001d9c                  _unsigned_int_to_string
-                  0x001e3c                  _init_buffers
-                  0x001e6a                  _put_val_inner
-                  0x001ed4                  _put_val_outer
-                  0x001f3e                  _main
-                  0x001f9a                  _init_joystick
-                  0x001ffc                  _delay_ms
+                  0x000318                  __DefaultInterrupt
+                  0x00031e                  ___divsi3
+                  0x00033c                  ___udivsi3
+                  0x000364                  _inner_angle_table
+                  0x000eb2                  _arctan_table
+                  0x0016c2                  _LCD_BASE_ADDRESS
+                  0x0016c4                  _LCD_WRITE_ADDR
+                  0x0016c6                  _LCD_READ_ADDR
+                  0x0016c8                  _init_servos
+                  0x00173c                  _init_test_pattern_button
+                  0x00178a                  _set_servo
+                  0x0017b6                  _set_servo2
+                  0x0017ec                  _distance
+                  0x001908                  _calculate_inner_angle
+                  0x001920                  _calculate_arctan_index
+                  0x001966                  _calculate_outer_angle
+                  0x0019b2                  _move_to
+                  0x001a4c                  _update_servo_angles
+                  0x001ad2                  _run_test_pattern
+                  0x001b90                  _enable_I2C
+                  0x001bb2                  _setup_I2C_Baud
+                  0x001bc0                  _lcd_send_command
+                  0x001c5c                  _lcd_clear
+                  0x001c68                  _lcd_init
+                  0x001cc6                  _lcd_print_char
+                  0x001cd4                  _lcd_print_string
+                  0x001cfa                  _lcd_print_int
+                  0x001d0c                  _lcd_set_double_height
+                  0x001d24                  _lcd_set_ROM_C
+                  0x001d42                  _lcd_set_cursor
+                  0x001d6a                  _setup_heartbeat_LED
+                  0x001d74                  _unsigned_int_to_string
+                  0x001e14                  _init_buffers
+                  0x001e42                  _put_val_inner
+                  0x001eac                  _put_val_outer
+                  0x001f16                  _main
+                  0x001fae                  _init_joystick
+                  0x002010                  _delay_ms
 
 External Symbols in Program Memory (by name):
 
-                  0x0016da                  _LCD_BASE_ADDRESS
-                  0x0016de                  _LCD_READ_ADDR
-                  0x0016dc                  _LCD_WRITE_ADDR
+                  0x0016c2                  _LCD_BASE_ADDRESS
+                  0x0016c6                  _LCD_READ_ADDR
+                  0x0016c4                  _LCD_WRITE_ADDR
                   0x0002e0                  __ADC1Interrupt
-                  0x000330                  __DefaultInterrupt
+                  0x000318                  __DefaultInterrupt
                   0x0002c8                  __IC1Interrupt
-                  0x000336                  ___divsi3
-                  0x000354                  ___udivsi3
+                  0x00031e                  ___divsi3
+                  0x00033c                  ___udivsi3
                   0x000252                  __data_init
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000eca                  _arctan_table
-                  0x001938                  _calculate_arctan_index
-                  0x001920                  _calculate_inner_angle
-                  0x00197e                  _calculate_outer_angle
-                  0x001ffc                  _delay_ms
-                  0x001804                  _distance
-                  0x001bb8                  _enable_I2C
-                  0x001e3c                  _init_buffers
-                  0x001f9a                  _init_joystick
-                  0x0016e0                  _init_servos
-                  0x001754                  _init_test_pattern_button
-                  0x00037c                  _inner_angle_table
-                  0x001c84                  _lcd_clear
-                  0x001c90                  _lcd_init
-                  0x001cee                  _lcd_print_char
-                  0x001d22                  _lcd_print_int
-                  0x001cfc                  _lcd_print_string
-                  0x001be8                  _lcd_send_command
-                  0x001d4c                  _lcd_set_ROM_C
-                  0x001d6a                  _lcd_set_cursor
-                  0x001d34                  _lcd_set_double_height
-                  0x001f3e                  _main
-                  0x0019ca                  _move_to
-                  0x001e6a                  _put_val_inner
-                  0x001ed4                  _put_val_outer
-                  0x001afa                  _run_test_pattern
-                  0x0017a2                  _set_servo
-                  0x0017ce                  _set_servo2
-                  0x001bda                  _setup_I2C_Baud
-                  0x001d92                  _setup_heartbeat_LED
-                  0x001d9c                  _unsigned_int_to_string
-                  0x001a64                  _update_servo_angles
+                  0x000eb2                  _arctan_table
+                  0x001920                  _calculate_arctan_index
+                  0x001908                  _calculate_inner_angle
+                  0x001966                  _calculate_outer_angle
+                  0x002010                  _delay_ms
+                  0x0017ec                  _distance
+                  0x001b90                  _enable_I2C
+                  0x001e14                  _init_buffers
+                  0x001fae                  _init_joystick
+                  0x0016c8                  _init_servos
+                  0x00173c                  _init_test_pattern_button
+                  0x000364                  _inner_angle_table
+                  0x001c5c                  _lcd_clear
+                  0x001c68                  _lcd_init
+                  0x001cc6                  _lcd_print_char
+                  0x001cfa                  _lcd_print_int
+                  0x001cd4                  _lcd_print_string
+                  0x001bc0                  _lcd_send_command
+                  0x001d24                  _lcd_set_ROM_C
+                  0x001d42                  _lcd_set_cursor
+                  0x001d0c                  _lcd_set_double_height
+                  0x001f16                  _main
+                  0x0019b2                  _move_to
+                  0x001e42                  _put_val_inner
+                  0x001eac                  _put_val_outer
+                  0x001ad2                  _run_test_pattern
+                  0x00178a                  _set_servo
+                  0x0017b6                  _set_servo2
+                  0x001bb2                  _setup_I2C_Baud
+                  0x001d6a                  _setup_heartbeat_LED
+                  0x001d74                  _unsigned_int_to_string
+                  0x001a4c                  _update_servo_angles
 
 Memory Configuration
 
@@ -278,7 +278,7 @@ LOAD /opt/microchip/xc16/v2.10/bin/bin/../../lib/libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200        0x174
+.text             0x000200        0x15c
  *(.init)
  .init            0x000200         0x4c /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(crt0_standard.o)
                   0x000200                  __reset
@@ -292,22 +292,22 @@ LOAD /opt/microchip/xc16/v2.10/bin/bin/../../lib/libfx-elf.a
  *(.isr*)
  .isr.text        0x0002c8         0x18 build/default/production/plotter_library.o
                   0x0002c8                  __IC1Interrupt
- .isr.text        0x0002e0         0x50 build/default/production/joystick_library.o
+ .isr.text        0x0002e0         0x38 build/default/production/joystick_library.o
                   0x0002e0                  __ADC1Interrupt
- .isr             0x000330          0x4 default_isr
-                  0x000330                  __DefaultInterrupt
+ .isr             0x000318          0x4 default_isr
+                  0x000318                  __DefaultInterrupt
  *(.libc)
  *(.libm)
  *(.libdsp)
  *(.lib*)
  .libpic30_crt_start_mode
-                  0x000334          0x2 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(crt_start_mode_normal.Meo)
-                  0x000334                  __crt_start_mode_normal
-                  0x000334                  __crt_start_mode
- .libm.divsi3     0x000336         0x1e /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(divsi3.XX_o)
-                  0x000336                  ___divsi3
- .libm.udivsi3    0x000354         0x20 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
-                  0x000354                  ___udivsi3
+                  0x00031c          0x2 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(crt_start_mode_normal.Meo)
+                  0x00031c                  __crt_start_mode_normal
+                  0x00031c                  __crt_start_mode
+ .libm.divsi3     0x00031e         0x1e /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(divsi3.XX_o)
+                  0x00031e                  ___divsi3
+ .libm.udivsi3    0x00033c         0x20 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
+                  0x00033c                  ___udivsi3
 
 usercode
  *(usercode)
@@ -321,16 +321,16 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x3d19
+.debug_info       0x000000       0x3cdd
  *(.debug_info)
  .debug_info      0x000000        0x35e build/default/production/circular_buffer_library.o
  .debug_info      0x00035e        0xd4a build/default/production/lcd_library.o
  .debug_info      0x0010a8       0x1764 build/default/production/plotter_library.o
  .debug_info      0x00280c        0x554 build/default/production/plotter_main.o
  .debug_info      0x002d60        0x15d build/default/production/plotter_utils.o
- .debug_info      0x002ebd        0xd43 build/default/production/joystick_library.o
- .debug_info      0x003c00         0x8c /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(divsi3.XX_o)
- .debug_info      0x003c8c         0x8d /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
+ .debug_info      0x002ebd        0xd07 build/default/production/joystick_library.o
+ .debug_info      0x003bc4         0x8c /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(divsi3.XX_o)
+ .debug_info      0x003c50         0x8d /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x645
@@ -344,16 +344,16 @@ __CONFIG1
  .debug_abbrev    0x00061d         0x14 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(divsi3.XX_o)
  .debug_abbrev    0x000631         0x14 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
 
-.debug_line       0x000000        0x6f2
+.debug_line       0x000000        0x6f8
  *(.debug_line)
  .debug_line      0x000000         0x80 build/default/production/circular_buffer_library.o
  .debug_line      0x000080        0x158 build/default/production/lcd_library.o
- .debug_line      0x0001d8        0x1d3 build/default/production/plotter_library.o
- .debug_line      0x0003ab        0x137 build/default/production/plotter_main.o
- .debug_line      0x0004e2         0x42 build/default/production/plotter_utils.o
- .debug_line      0x000524        0x146 build/default/production/joystick_library.o
- .debug_line      0x00066a         0x43 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(divsi3.XX_o)
- .debug_line      0x0006ad         0x45 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
+ .debug_line      0x0001d8        0x1cf build/default/production/plotter_library.o
+ .debug_line      0x0003a7        0x143 build/default/production/plotter_main.o
+ .debug_line      0x0004ea         0x42 build/default/production/plotter_utils.o
+ .debug_line      0x00052c        0x144 build/default/production/joystick_library.o
+ .debug_line      0x000670         0x43 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(divsi3.XX_o)
+ .debug_line      0x0006b3         0x45 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
 
 .debug_frame      0x000000        0x3f2
  *(.debug_frame)
@@ -1088,56 +1088,56 @@ __c30_signature
  .ivt._ADC1Interrupt
                   0x00002e          0x2 build/default/production/joystick_library.o
 
-.const              0x8374       0x136c load address 0x000374  
- .const             0x8374       0x1356 build/default/production/plotter_library.o
-                    0x837c                  _inner_angle_table
-                    0x8eca                  _arctan_table
- .const             0x96ca          0x8 build/default/production/plotter_main.o
- .const             0x96d2          0x8 build/default/production/joystick_library.o
- .const             0x96da          0x6 build/default/production/lcd_library.o
-                    0x96da                  _LCD_BASE_ADDRESS
-                    0x96dc                  _LCD_WRITE_ADDR
-                    0x96de                  _LCD_READ_ADDR
+.const              0x835c       0x136c load address 0x00035c  
+ .const             0x835c       0x1356 build/default/production/plotter_library.o
+                    0x8364                  _inner_angle_table
+                    0x8eb2                  _arctan_table
+ .const             0x96b2          0x8 build/default/production/plotter_main.o
+ .const             0x96ba          0x8 build/default/production/joystick_library.o
+ .const             0x96c2          0x6 build/default/production/lcd_library.o
+                    0x96c2                  _LCD_BASE_ADDRESS
+                    0x96c4                  _LCD_WRITE_ADDR
+                    0x96c6                  _LCD_READ_ADDR
 
-.text             0x0016e0        0x8f0
- .text            0x0016e0        0x4d8 build/default/production/plotter_library.o
-                  0x0016e0                  _init_servos
-                  0x001754                  _init_test_pattern_button
-                  0x0017a2                  _set_servo
-                  0x0017ce                  _set_servo2
-                  0x001804                  _distance
-                  0x001920                  _calculate_inner_angle
-                  0x001938                  _calculate_arctan_index
-                  0x00197e                  _calculate_outer_angle
-                  0x0019ca                  _move_to
-                  0x001a64                  _update_servo_angles
-                  0x001afa                  _run_test_pattern
- .text            0x001bb8        0x284 build/default/production/lcd_library.o
-                  0x001bb8                  _enable_I2C
-                  0x001bda                  _setup_I2C_Baud
-                  0x001be8                  _lcd_send_command
-                  0x001c84                  _lcd_clear
-                  0x001c90                  _lcd_init
-                  0x001cee                  _lcd_print_char
-                  0x001cfc                  _lcd_print_string
-                  0x001d22                  _lcd_print_int
-                  0x001d34                  _lcd_set_double_height
-                  0x001d4c                  _lcd_set_ROM_C
-                  0x001d6a                  _lcd_set_cursor
-                  0x001d92                  _setup_heartbeat_LED
-                  0x001d9c                  _unsigned_int_to_string
- .text            0x001e3c        0x102 build/default/production/circular_buffer_library.o
-                  0x001e3c                  _init_buffers
-                  0x001e6a                  _put_val_inner
-                  0x001ed4                  _put_val_outer
- .text            0x001f3e         0x5c build/default/production/plotter_main.o
-                  0x001f3e                  _main
- .text            0x001f9a         0x36 build/default/production/joystick_library.o
-                  0x001f9a                  _init_joystick
+.text             0x0016c8        0x91c
+ .text            0x0016c8        0x4c8 build/default/production/plotter_library.o
+                  0x0016c8                  _init_servos
+                  0x00173c                  _init_test_pattern_button
+                  0x00178a                  _set_servo
+                  0x0017b6                  _set_servo2
+                  0x0017ec                  _distance
+                  0x001908                  _calculate_inner_angle
+                  0x001920                  _calculate_arctan_index
+                  0x001966                  _calculate_outer_angle
+                  0x0019b2                  _move_to
+                  0x001a4c                  _update_servo_angles
+                  0x001ad2                  _run_test_pattern
+ .text            0x001b90        0x284 build/default/production/lcd_library.o
+                  0x001b90                  _enable_I2C
+                  0x001bb2                  _setup_I2C_Baud
+                  0x001bc0                  _lcd_send_command
+                  0x001c5c                  _lcd_clear
+                  0x001c68                  _lcd_init
+                  0x001cc6                  _lcd_print_char
+                  0x001cd4                  _lcd_print_string
+                  0x001cfa                  _lcd_print_int
+                  0x001d0c                  _lcd_set_double_height
+                  0x001d24                  _lcd_set_ROM_C
+                  0x001d42                  _lcd_set_cursor
+                  0x001d6a                  _setup_heartbeat_LED
+                  0x001d74                  _unsigned_int_to_string
+ .text            0x001e14        0x102 build/default/production/circular_buffer_library.o
+                  0x001e14                  _init_buffers
+                  0x001e42                  _put_val_inner
+                  0x001eac                  _put_val_outer
+ .text            0x001f16         0x98 build/default/production/plotter_main.o
+                  0x001f16                  _main
+ .text            0x001fae         0x36 build/default/production/joystick_library.o
+                  0x001fae                  _init_joystick
 
-.dinit            0x001fd0         0x2c
- .dinit           0x001fd0         0x2c data_init
+.dinit            0x001fe4         0x2c
+ .dinit           0x001fe4         0x2c data_init
 
-.text             0x001ffc         0x20
- .text            0x001ffc         0x20 build/default/production/plotter_utils.o
-                  0x001ffc                  _delay_ms
+.text             0x002010         0x20
+ .text            0x002010         0x20 build/default/production/plotter_utils.o
+                  0x002010                  _delay_ms

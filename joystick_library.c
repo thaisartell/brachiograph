@@ -40,11 +40,11 @@ void init_joystick(void) {
 void __attribute((interrupt, auto_psv)) _ADC1Interrupt(void){
     IFS0bits.AD1IF = 0;
     
-    x_vel =  (512-ADC1BUF0)>>5;
-    y_vel =  (512-ADC1BUF1)>>5;
+    x_vel =  ADC1BUF0>>5;
+    y_vel =  ADC1BUF1>>5;
     
-    raw_x = 1023-ADC1BUF0;
-    raw_y = 1023-ADC1BUF1;
+//    raw_x = 1023-ADC1BUF0;
+//    raw_y = 1023-ADC1BUF1;
     
     LATBbits.LATB6 ^= 1; // Toggle RB15 (heartbeat LED)
 }

@@ -180,10 +180,10 @@ void update_servo_angles(int print_to_lcd) {
         lcd_set_cursor(6,0); // Move to third line (need to fix setCursor)
 
         // Print coordinates
-        lcd_print_int(raw_x);
-        lcd_print_char(',');
-        lcd_print_char(' ');
-        lcd_print_int(raw_y);     
+//        lcd_print_int(raw_x);
+//        lcd_print_char(',');
+//        lcd_print_char(' ');
+//        lcd_print_int(raw_y);     
     }
 }
 

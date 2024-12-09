@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/debug/brachiograph.debug.elf">
+  <executable name="dist/default/debug/sarte016_troth004_brachiograph.X.debug.elf">
     <memory name="data">
       <units>bytes</units>
       <length>8192</length>
-      <used>598</used>
-      <free>7594</free>
+      <used>624</used>
+      <free>7568</free>
     </memory>
     <memory name="program">
       <units>bytes</units>
       <length>65274</length>
-      <used>19380</used>
-      <free>45894</free>
+      <used>11556</used>
+      <free>53718</free>
     </memory>
   </executable>
 </project>

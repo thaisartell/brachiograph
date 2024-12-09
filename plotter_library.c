@@ -220,11 +220,3 @@ void run_test_pattern() {
 //        move_to(128, 512, CYCLES_TO_TRAVEL);
     }
 }
-
-volatile int get_raw_x(void){
-    return raw_x;
-}
-
-volatile int get_raw_y(void){
-    return raw_y;
-}

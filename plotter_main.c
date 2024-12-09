@@ -9,6 +9,7 @@
 #include "lcd_library.h"
 #include "circular_buffer_library.h"
 #include "plotter_library.h"
+#include "joystick_library.h"
 
 // CW1: FLASH CONFIGURATION WORD 1
 #pragma config ICS = PGx1          // Comm Channel Select
@@ -39,17 +40,23 @@ int main(void) {
     delay_ms(DELAY_TIME);
     
     while (1) {
+        
         if (run_test_pattern_flag) {
+            AD1CON1bits.ADON = 0;
             run_test_pattern();
             run_test_pattern_flag = 0;
+            AD1CON1bits.ADON = 1;
         }
         else {
+            
             update_servo_angles(1);
-
+            
+            raw_x += x_vel;
+            raw_y += y_vel;
+            
             delay_ms(DELAY_TIME); // Wait
             LATBbits.LATB6 ^= 1; // Toggle RB15 (heartbeat LED)
         }
     }
-
     return 0;
 }

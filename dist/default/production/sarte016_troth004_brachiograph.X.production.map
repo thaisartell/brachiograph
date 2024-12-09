@@ -1,23 +1,23 @@
 Microchip Technology Inc, v2.10 (B)
 
 Tool Name:
-  c:\program files\microchip\xc16\v2.10\bin\bin\..\bin/elf-ld.exe
+  /opt/microchip/xc16/v2.10/bin/bin/../bin/elf-ld
 
 Command:
   -p24FJ64GA002 \
-  --mdfp=C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC24F-GA-GB_DFP/1.9.336/xc16 \
+  --mdfp=/opt/microchip/mplabx/v6.20/packs/Microchip/PIC24F-GA-GB_DFP/1.9.336/xc16 \
   -o \
-  dist/default/production/brachiograph.production.elf \
-  -Lc:/program files/microchip/xc16/v2.10/bin/bin/.. \
-  -LC:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC24F-GA-GB_DFP/1.9.336/xc16/bin/../support/PIC24F/gld \
-  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../lib \
-  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/PIC24E/gld \
-  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/PIC24F/gld \
-  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/PIC24H/gld \
-  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/dsPIC30F/gld \
-  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/dsPIC33C/gld \
-  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/dsPIC33E/gld \
-  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/dsPIC33F/gld \
+  dist/default/production/sarte016_troth004_brachiograph.X.production.elf \
+  -L/opt/microchip/xc16/v2.10/bin/bin/.. \
+  -L/opt/microchip/mplabx/v6.20/packs/Microchip/PIC24F-GA-GB_DFP/1.9.336/xc16/bin/../support/PIC24F/gld \
+  -L/opt/microchip/xc16/v2.10/bin/bin/../../lib \
+  -L/opt/microchip/xc16/v2.10/bin/bin/../../support/PIC24E/gld \
+  -L/opt/microchip/xc16/v2.10/bin/bin/../../support/PIC24F/gld \
+  -L/opt/microchip/xc16/v2.10/bin/bin/../../support/PIC24H/gld \
+  -L/opt/microchip/xc16/v2.10/bin/bin/../../support/dsPIC30F/gld \
+  -L/opt/microchip/xc16/v2.10/bin/bin/../../support/dsPIC33C/gld \
+  -L/opt/microchip/xc16/v2.10/bin/bin/../../support/dsPIC33E/gld \
+  -L/opt/microchip/xc16/v2.10/bin/bin/../../support/dsPIC33F/gld \
   build/default/production/circular_buffer_library.o \
   build/default/production/lcd_library.o \
   build/default/production/plotter_library.o \
@@ -37,7 +37,7 @@ Command:
   --stackguard=16 \
   --no-force-link \
   --smart-io \
-  -Map=dist/default/production/brachiograph.production.map \
+  -Map=dist/default/production/sarte016_troth004_brachiograph.X.production.map \
   --report-mem \
   --memorysummary \
   dist/default/production/memoryfile.xml \
@@ -51,15 +51,15 @@ Command:
 Optional library libpPIC24Fxxx.a not found
 Archive member included because of file (symbol)
 
-c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o)
+/opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(crt0_standard.o)
                               (__resetPRI)
-c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
-                              c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o) (__data_init_standard)
-c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt_start_mode_normal.Meo)
+/opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(data_init_standard.o)
+                              /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(crt0_standard.o) (__data_init_standard)
+/opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(crt_start_mode_normal.Meo)
                               (__crt_start_mode_normal)
-c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsi3.XX_o)
+/opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(divsi3.XX_o)
                               build/default/production/plotter_library.o (___divsi3)
-c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(udivsi3.XX_o)
+/opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
                               build/default/production/circular_buffer_library.o (___udivsi3)
 
 
@@ -73,25 +73,25 @@ Default Scalar Model: Small
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200               0x160           0x210  (528)
-.const                       0x360              0x136c          0x1d22  (7458)
-.text                       0x16cc               0x900           0xd80  (3456)
-.dinit                      0x1fcc                0x2c            0x42  (66)
-.text                       0x1ff8                0x20            0x30  (48)
+.text                        0x200               0x174           0x22e  (558)
+.const                       0x374              0x136c          0x1d22  (7458)
+.text                       0x16e0               0x8f0           0xd68  (3432)
+.dinit                      0x1fd0                0x2c            0x42  (66)
+.text                       0x1ffc                0x20            0x30  (48)
 
-                 Total "program" memory used (bytes):         0x2d24  (11556) 17%
+                 Total "program" memory used (bytes):         0x2d2a  (11562) 17%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.nbss                        0x800                   0            0x14  (20)
-.ndata                       0x814                   0             0x6  (6)
-.nbss                        0x81a                   0             0x2  (2)
-.bss                         0x81c                   0           0x200  (512)
+.nbss                        0x800                   0            0x18  (24)
+.ndata                       0x818                   0             0x6  (6)
+.nbss                        0x81e                   0             0x2  (2)
+.bss                         0x820                   0           0x200  (512)
 
-                 Total "data" memory used (bytes):          0x21c  (540) 6%
+                 Total "data" memory used (bytes):          0x220  (544) 6%
 
 
 Dynamic Memory Usage
@@ -99,9 +99,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0xa1c                              0x1de4  (7652)
+stack                        0xa20                              0x1de0  (7648)
 
-                 Maximum dynamic memory (bytes):         0x1de4  (7652)
+                 Maximum dynamic memory (bytes):         0x1de0  (7648)
 
 Info: Project is using a large data memory model when small data memory model is sufficient.
 
@@ -114,133 +114,129 @@ External Symbols in Data Memory (by address):
                     0x0808                  _outer_average
                     0x080c                  _joystick_x_vector
                     0x080e                  _joystick_y_vector
-                    0x0810                  _x_pos
-                    0x0812                  _y_pos
-                    0x0814                  _raw_x
-                    0x0816                  _raw_y
-                    0x0818                  _AVERAGE_COUNT
-                    0x081a                  _run_test_pattern_flag
-                    0x081c                  _inner_buffer
-                    0x091c                  _outer_buffer
+                    0x0810                  _x_vel
+                    0x0812                  _y_vel
+                    0x0814                  _x_pos
+                    0x0816                  _y_pos
+                    0x0818                  _raw_x
+                    0x081a                  _raw_y
+                    0x081c                  _AVERAGE_COUNT
+                    0x081e                  _run_test_pattern_flag
+                    0x0820                  _inner_buffer
+                    0x0920                  _outer_buffer
 
 External Symbols in Data Memory (by name):
 
-                    0x0818                  _AVERAGE_COUNT
+                    0x081c                  _AVERAGE_COUNT
                     0x0804                  _inner_average
-                    0x081c                  _inner_buffer
+                    0x0820                  _inner_buffer
                     0x0800                  _inner_index
                     0x080c                  _joystick_x_vector
                     0x080e                  _joystick_y_vector
                     0x0808                  _outer_average
-                    0x091c                  _outer_buffer
+                    0x0920                  _outer_buffer
                     0x0802                  _outer_index
-                    0x0814                  _raw_x
-                    0x0816                  _raw_y
-                    0x081a                  _run_test_pattern_flag
-                    0x0810                  _x_pos
-                    0x0812                  _y_pos
+                    0x0818                  _raw_x
+                    0x081a                  _raw_y
+                    0x081e                  _run_test_pattern_flag
+                    0x0814                  _x_pos
+                    0x0810                  _x_vel
+                    0x0816                  _y_pos
+                    0x0812                  _y_vel
 
 External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00023c                  __psv_init
-                  0x000252                  __data_init_standard
                   0x000252                  __data_init
+                  0x000252                  __data_init_standard
                   0x0002c8                  __IC1Interrupt
                   0x0002e0                  __ADC1Interrupt
-                  0x00031c                  __DefaultInterrupt
-                  0x000322                  ___divsi3
-                  0x000340                  ___udivsi3
-                  0x000368                  _inner_angle_table
-                  0x000eb6                  _arctan_table
-                  0x0016c6                  _LCD_BASE_ADDRESS
-                  0x0016c8                  _LCD_WRITE_ADDR
-                  0x0016ca                  _LCD_READ_ADDR
-                  0x0016cc                  _init_servos
-                  0x001740                  _init_test_pattern_button
-                  0x00178e                  _set_servo
-                  0x0017ba                  _set_servo2
-                  0x0017f0                  _distance
-                  0x00190c                  _calculate_inner_angle
-                  0x001924                  _calculate_arctan_index
-                  0x00196a                  _calculate_outer_angle
-                  0x0019b6                  _move_to
-                  0x001a50                  _update_servo_angles
-                  0x001ae6                  _run_test_pattern
-                  0x001ba4                  _get_raw_x
-                  0x001bac                  _get_raw_y
-                  0x001bb4                  _enable_I2C
-                  0x001bd6                  _setup_I2C_Baud
-                  0x001be4                  _lcd_send_command
-                  0x001c80                  _lcd_clear
-                  0x001c8c                  _lcd_init
-                  0x001cea                  _lcd_print_char
-                  0x001cf8                  _lcd_print_string
-                  0x001d1e                  _lcd_print_int
-                  0x001d30                  _lcd_set_double_height
-                  0x001d48                  _lcd_set_ROM_C
-                  0x001d66                  _lcd_set_cursor
-                  0x001d8e                  _setup_heartbeat_LED
-                  0x001d98                  _unsigned_int_to_string
-                  0x001e38                  _init_buffers
-                  0x001e66                  _put_val_inner
-                  0x001ed0                  _put_val_outer
-                  0x001f3a                  _init_joystick
-                  0x001f70                  _set_x_pos
-                  0x001f7a                  _set_y_pos
-                  0x001f84                  _main
-                  0x001ff8                  _delay_ms
+                  0x000330                  __DefaultInterrupt
+                  0x000336                  ___divsi3
+                  0x000354                  ___udivsi3
+                  0x00037c                  _inner_angle_table
+                  0x000eca                  _arctan_table
+                  0x0016da                  _LCD_BASE_ADDRESS
+                  0x0016dc                  _LCD_WRITE_ADDR
+                  0x0016de                  _LCD_READ_ADDR
+                  0x0016e0                  _init_servos
+                  0x001754                  _init_test_pattern_button
+                  0x0017a2                  _set_servo
+                  0x0017ce                  _set_servo2
+                  0x001804                  _distance
+                  0x001920                  _calculate_inner_angle
+                  0x001938                  _calculate_arctan_index
+                  0x00197e                  _calculate_outer_angle
+                  0x0019ca                  _move_to
+                  0x001a64                  _update_servo_angles
+                  0x001afa                  _run_test_pattern
+                  0x001bb8                  _enable_I2C
+                  0x001bda                  _setup_I2C_Baud
+                  0x001be8                  _lcd_send_command
+                  0x001c84                  _lcd_clear
+                  0x001c90                  _lcd_init
+                  0x001cee                  _lcd_print_char
+                  0x001cfc                  _lcd_print_string
+                  0x001d22                  _lcd_print_int
+                  0x001d34                  _lcd_set_double_height
+                  0x001d4c                  _lcd_set_ROM_C
+                  0x001d6a                  _lcd_set_cursor
+                  0x001d92                  _setup_heartbeat_LED
+                  0x001d9c                  _unsigned_int_to_string
+                  0x001e3c                  _init_buffers
+                  0x001e6a                  _put_val_inner
+                  0x001ed4                  _put_val_outer
+                  0x001f3e                  _main
+                  0x001f9a                  _init_joystick
+                  0x001ffc                  _delay_ms
 
 External Symbols in Program Memory (by name):
 
-                  0x0016c6                  _LCD_BASE_ADDRESS
-                  0x0016ca                  _LCD_READ_ADDR
-                  0x0016c8                  _LCD_WRITE_ADDR
+                  0x0016da                  _LCD_BASE_ADDRESS
+                  0x0016de                  _LCD_READ_ADDR
+                  0x0016dc                  _LCD_WRITE_ADDR
                   0x0002e0                  __ADC1Interrupt
-                  0x00031c                  __DefaultInterrupt
+                  0x000330                  __DefaultInterrupt
                   0x0002c8                  __IC1Interrupt
-                  0x000322                  ___divsi3
-                  0x000340                  ___udivsi3
+                  0x000336                  ___divsi3
+                  0x000354                  ___udivsi3
                   0x000252                  __data_init
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000eb6                  _arctan_table
-                  0x001924                  _calculate_arctan_index
-                  0x00190c                  _calculate_inner_angle
-                  0x00196a                  _calculate_outer_angle
-                  0x001ff8                  _delay_ms
-                  0x0017f0                  _distance
-                  0x001bb4                  _enable_I2C
-                  0x001ba4                  _get_raw_x
-                  0x001bac                  _get_raw_y
-                  0x001e38                  _init_buffers
-                  0x001f3a                  _init_joystick
-                  0x0016cc                  _init_servos
-                  0x001740                  _init_test_pattern_button
-                  0x000368                  _inner_angle_table
-                  0x001c80                  _lcd_clear
-                  0x001c8c                  _lcd_init
-                  0x001cea                  _lcd_print_char
-                  0x001d1e                  _lcd_print_int
-                  0x001cf8                  _lcd_print_string
-                  0x001be4                  _lcd_send_command
-                  0x001d48                  _lcd_set_ROM_C
-                  0x001d66                  _lcd_set_cursor
-                  0x001d30                  _lcd_set_double_height
-                  0x001f84                  _main
-                  0x0019b6                  _move_to
-                  0x001e66                  _put_val_inner
-                  0x001ed0                  _put_val_outer
-                  0x001ae6                  _run_test_pattern
-                  0x00178e                  _set_servo
-                  0x0017ba                  _set_servo2
-                  0x001f70                  _set_x_pos
-                  0x001f7a                  _set_y_pos
-                  0x001bd6                  _setup_I2C_Baud
-                  0x001d8e                  _setup_heartbeat_LED
-                  0x001d98                  _unsigned_int_to_string
-                  0x001a50                  _update_servo_angles
+                  0x000eca                  _arctan_table
+                  0x001938                  _calculate_arctan_index
+                  0x001920                  _calculate_inner_angle
+                  0x00197e                  _calculate_outer_angle
+                  0x001ffc                  _delay_ms
+                  0x001804                  _distance
+                  0x001bb8                  _enable_I2C
+                  0x001e3c                  _init_buffers
+                  0x001f9a                  _init_joystick
+                  0x0016e0                  _init_servos
+                  0x001754                  _init_test_pattern_button
+                  0x00037c                  _inner_angle_table
+                  0x001c84                  _lcd_clear
+                  0x001c90                  _lcd_init
+                  0x001cee                  _lcd_print_char
+                  0x001d22                  _lcd_print_int
+                  0x001cfc                  _lcd_print_string
+                  0x001be8                  _lcd_send_command
+                  0x001d4c                  _lcd_set_ROM_C
+                  0x001d6a                  _lcd_set_cursor
+                  0x001d34                  _lcd_set_double_height
+                  0x001f3e                  _main
+                  0x0019ca                  _move_to
+                  0x001e6a                  _put_val_inner
+                  0x001ed4                  _put_val_outer
+                  0x001afa                  _run_test_pattern
+                  0x0017a2                  _set_servo
+                  0x0017ce                  _set_servo2
+                  0x001bda                  _setup_I2C_Baud
+                  0x001d92                  _setup_heartbeat_LED
+                  0x001d9c                  _unsigned_int_to_string
+                  0x001a64                  _update_servo_angles
 
 Memory Configuration
 
@@ -253,7 +249,7 @@ aivt             0x000104           0x0000fc
 program          0x000200           0x00a9fc           xr
 CONFIG2          0x00abfc           0x000002  
 CONFIG1          0x00abfe           0x000002  
-*default*        0x000000           0xffffffff  
+*default*        0x000000           0xffffffffffffffff  
 
 Linker script and memory map
 
@@ -265,7 +261,7 @@ LOAD build/default/production/plotter_utils.o
 LOAD build/default/production/joystick_library.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD pPIC24Fxxx
-LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libfx-elf.a
+LOAD /opt/microchip/xc16/v2.10/bin/bin/../../lib/libfx-elf.a
                     0xabfc                  __CONFIG2 = 0xabfc
                     0xabfe                  __CONFIG1 = 0xabfe
                     0x0001                  __NO_HANDLES = 0x1
@@ -282,36 +278,36 @@ LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200        0x160
+.text             0x000200        0x174
  *(.init)
- .init            0x000200         0x4c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o)
-                  0x000200                  __resetPRI
+ .init            0x000200         0x4c /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(crt0_standard.o)
                   0x000200                  __reset
+                  0x000200                  __resetPRI
                   0x00023c                  __psv_init
- .init            0x00024c         0x7c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
-                  0x000252                  __data_init_standard
+ .init            0x00024c         0x7c /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(data_init_standard.o)
                   0x000252                  __data_init
+                  0x000252                  __data_init_standard
  *(.user_init)
  *(.handle)
  *(.isr*)
  .isr.text        0x0002c8         0x18 build/default/production/plotter_library.o
                   0x0002c8                  __IC1Interrupt
- .isr.text        0x0002e0         0x3c build/default/production/joystick_library.o
+ .isr.text        0x0002e0         0x50 build/default/production/joystick_library.o
                   0x0002e0                  __ADC1Interrupt
- .isr             0x00031c          0x4 default_isr
-                  0x00031c                  __DefaultInterrupt
+ .isr             0x000330          0x4 default_isr
+                  0x000330                  __DefaultInterrupt
  *(.libc)
  *(.libm)
  *(.libdsp)
  *(.lib*)
  .libpic30_crt_start_mode
-                  0x000320          0x2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt_start_mode_normal.Meo)
-                  0x000320                  __crt_start_mode
-                  0x000320                  __crt_start_mode_normal
- .libm.divsi3     0x000322         0x1e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsi3.XX_o)
-                  0x000322                  ___divsi3
- .libm.udivsi3    0x000340         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(udivsi3.XX_o)
-                  0x000340                  ___udivsi3
+                  0x000334          0x2 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(crt_start_mode_normal.Meo)
+                  0x000334                  __crt_start_mode_normal
+                  0x000334                  __crt_start_mode
+ .libm.divsi3     0x000336         0x1e /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(divsi3.XX_o)
+                  0x000336                  ___divsi3
+ .libm.udivsi3    0x000354         0x20 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
+                  0x000354                  ___udivsi3
 
 usercode
  *(usercode)
@@ -325,56 +321,56 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x3b7a
+.debug_info       0x000000       0x3d19
  *(.debug_info)
- .debug_info      0x000000        0x350 build/default/production/circular_buffer_library.o
- .debug_info      0x000350        0xd3c build/default/production/lcd_library.o
- .debug_info      0x00108c       0x1790 build/default/production/plotter_library.o
- .debug_info      0x00281c        0x383 build/default/production/plotter_main.o
- .debug_info      0x002b9f        0x14f build/default/production/plotter_utils.o
- .debug_info      0x002cee        0xd73 build/default/production/joystick_library.o
- .debug_info      0x003a61         0x8c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsi3.XX_o)
- .debug_info      0x003aed         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(udivsi3.XX_o)
+ .debug_info      0x000000        0x35e build/default/production/circular_buffer_library.o
+ .debug_info      0x00035e        0xd4a build/default/production/lcd_library.o
+ .debug_info      0x0010a8       0x1764 build/default/production/plotter_library.o
+ .debug_info      0x00280c        0x554 build/default/production/plotter_main.o
+ .debug_info      0x002d60        0x15d build/default/production/plotter_utils.o
+ .debug_info      0x002ebd        0xd43 build/default/production/joystick_library.o
+ .debug_info      0x003c00         0x8c /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(divsi3.XX_o)
+ .debug_info      0x003c8c         0x8d /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x666
+.debug_abbrev     0x000000        0x645
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0xbc build/default/production/circular_buffer_library.o
  .debug_abbrev    0x0000bc        0x158 build/default/production/lcd_library.o
- .debug_abbrev    0x000214        0x1bd build/default/production/plotter_library.o
- .debug_abbrev    0x0003d1         0xcb build/default/production/plotter_main.o
- .debug_abbrev    0x00049c         0x43 build/default/production/plotter_utils.o
- .debug_abbrev    0x0004df        0x15f build/default/production/joystick_library.o
- .debug_abbrev    0x00063e         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsi3.XX_o)
- .debug_abbrev    0x000652         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(udivsi3.XX_o)
+ .debug_abbrev    0x000214        0x1a6 build/default/production/plotter_library.o
+ .debug_abbrev    0x0003ba         0xee build/default/production/plotter_main.o
+ .debug_abbrev    0x0004a8         0x43 build/default/production/plotter_utils.o
+ .debug_abbrev    0x0004eb        0x132 build/default/production/joystick_library.o
+ .debug_abbrev    0x00061d         0x14 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(divsi3.XX_o)
+ .debug_abbrev    0x000631         0x14 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
 
-.debug_line       0x000000        0x72c
+.debug_line       0x000000        0x6f2
  *(.debug_line)
  .debug_line      0x000000         0x80 build/default/production/circular_buffer_library.o
- .debug_line      0x000080        0x170 build/default/production/lcd_library.o
- .debug_line      0x0001f0        0x1f1 build/default/production/plotter_library.o
- .debug_line      0x0003e1        0x131 build/default/production/plotter_main.o
- .debug_line      0x000512         0x42 build/default/production/plotter_utils.o
- .debug_line      0x000554        0x150 build/default/production/joystick_library.o
- .debug_line      0x0006a4         0x43 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsi3.XX_o)
- .debug_line      0x0006e7         0x45 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(udivsi3.XX_o)
+ .debug_line      0x000080        0x158 build/default/production/lcd_library.o
+ .debug_line      0x0001d8        0x1d3 build/default/production/plotter_library.o
+ .debug_line      0x0003ab        0x137 build/default/production/plotter_main.o
+ .debug_line      0x0004e2         0x42 build/default/production/plotter_utils.o
+ .debug_line      0x000524        0x146 build/default/production/joystick_library.o
+ .debug_line      0x00066a         0x43 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(divsi3.XX_o)
+ .debug_line      0x0006ad         0x45 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
 
-.debug_frame      0x000000        0x45a
+.debug_frame      0x000000        0x3f2
  *(.debug_frame)
  .debug_frame     0x000000         0x62 build/default/production/circular_buffer_library.o
  .debug_frame     0x000062        0x166 build/default/production/lcd_library.o
- .debug_frame     0x0001c8        0x1aa build/default/production/plotter_library.o
- .debug_frame     0x000372         0x2e build/default/production/plotter_main.o
- .debug_frame     0x0003a0         0x2e build/default/production/plotter_utils.o
- .debug_frame     0x0003ce         0x8c build/default/production/joystick_library.o
+ .debug_frame     0x0001c8        0x176 build/default/production/plotter_library.o
+ .debug_frame     0x00033e         0x2e build/default/production/plotter_main.o
+ .debug_frame     0x00036c         0x2e build/default/production/plotter_utils.o
+ .debug_frame     0x00039a         0x58 build/default/production/joystick_library.o
 
-.debug_str        0x000000        0x215
+.debug_str        0x000000        0x221
  *(.debug_str)
  .debug_str       0x000000         0x69 build/default/production/circular_buffer_library.o
  .debug_str       0x000069         0x4f build/default/production/lcd_library.o
  .debug_str       0x0000b8         0xe6 build/default/production/plotter_library.o
- .debug_str       0x00019e         0x1f build/default/production/plotter_main.o
- .debug_str       0x0001bd         0x58 build/default/production/joystick_library.o
+ .debug_str       0x00019e         0x2b build/default/production/plotter_main.o
+ .debug_str       0x0001c9         0x58 build/default/production/joystick_library.o
 
 .debug_loc
  *(.debug_loc)
@@ -383,20 +379,20 @@ __CONFIG1
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x44a
+                  0x000000        0x426
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0xbf build/default/production/circular_buffer_library.o
  .debug_pubnames
                   0x0000bf        0x14a build/default/production/lcd_library.o
  .debug_pubnames
-                  0x000209        0x174 build/default/production/plotter_library.o
+                  0x000209        0x158 build/default/production/plotter_library.o
  .debug_pubnames
-                  0x00037d         0x1b build/default/production/plotter_main.o
+                  0x000361         0x1b build/default/production/plotter_main.o
  .debug_pubnames
-                  0x000398         0x1f build/default/production/plotter_utils.o
+                  0x00037c         0x1f build/default/production/plotter_utils.o
  .debug_pubnames
-                  0x0003b7         0x93 build/default/production/joystick_library.o
+                  0x00039b         0x8b build/default/production/joystick_library.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -416,9 +412,9 @@ __CONFIG1
  .debug_aranges
                   0x000078         0x18 build/default/production/joystick_library.o
  .debug_aranges
-                  0x000090         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsi3.XX_o)
+                  0x000090         0x20 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(divsi3.XX_o)
  .debug_aranges
-                  0x0000b0         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(udivsi3.XX_o)
+                  0x0000b0         0x20 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -999,16 +995,16 @@ __CONFIG1
                     0x0230                  UART2 = 0x230
                     0x0230                  _UART2 = 0x230
 START GROUP
-LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a
-LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libm-elf.a
-LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a
+LOAD /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a
+LOAD /opt/microchip/xc16/v2.10/bin/bin/../../lib/libm-elf.a
+LOAD /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-elf.a
 END GROUP
-OUTPUT(dist/default/production/brachiograph.production.elf elf32-pic30)
+OUTPUT(dist/default/production/sarte016_troth004_brachiograph.X.production.elf elf32-pic30)
 LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x0000d0        0x3d0
+                  0x0000d0        0x3f3
  .debug_pubtypes
                   0x0000d0         0x12 build/default/production/circular_buffer_library.o
  .debug_pubtypes
@@ -1016,62 +1012,64 @@ LOAD data_init
  .debug_pubtypes
                   0x0001c3        0x197 build/default/production/plotter_library.o
  .debug_pubtypes
-                  0x00035a         0x3c build/default/production/plotter_main.o
+                  0x00035a         0x5f build/default/production/plotter_main.o
  .debug_pubtypes
-                  0x000396         0x12 build/default/production/plotter_utils.o
+                  0x0003b9         0x12 build/default/production/plotter_utils.o
  .debug_pubtypes
-                  0x0003a8         0xf8 build/default/production/joystick_library.o
+                  0x0003cb         0xf8 build/default/production/joystick_library.o
 
 __c30_signature
-                  0x0004a0         0x3c
+                  0x0004c3         0x3c
  __c30_signature
-                  0x0004a0          0x6 build/default/production/circular_buffer_library.o
+                  0x0004c3          0x6 build/default/production/circular_buffer_library.o
  __c30_signature
-                  0x0004a6          0x6 build/default/production/lcd_library.o
+                  0x0004c9          0x6 build/default/production/lcd_library.o
  __c30_signature
-                  0x0004ac          0x6 build/default/production/plotter_library.o
+                  0x0004cf          0x6 build/default/production/plotter_library.o
  __c30_signature
-                  0x0004b2          0x6 build/default/production/plotter_main.o
+                  0x0004d5          0x6 build/default/production/plotter_main.o
  __c30_signature
-                  0x0004b8          0x6 build/default/production/plotter_utils.o
+                  0x0004db          0x6 build/default/production/plotter_utils.o
  __c30_signature
-                  0x0004be          0x6 build/default/production/joystick_library.o
+                  0x0004e1          0x6 build/default/production/joystick_library.o
  __c30_signature
-                  0x0004c4          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o)
+                  0x0004e7          0x6 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x0004ca          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
+                  0x0004ed          0x6 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(data_init_standard.o)
  __c30_signature
-                  0x0004d0          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsi3.XX_o)
+                  0x0004f3          0x6 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(divsi3.XX_o)
  __c30_signature
-                  0x0004d6          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(udivsi3.XX_o)
+                  0x0004f9          0x6 /opt/microchip/xc16/v2.10/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.XX_o)
 
-.nbss               0x0800         0x14
+.nbss               0x0800         0x18
  .nbss              0x0800          0xc build/default/production/circular_buffer_library.o
                     0x0800                  _inner_index
                     0x0802                  _outer_index
                     0x0804                  _inner_average
                     0x0808                  _outer_average
- .nbss              0x080c          0x8 build/default/production/joystick_library.o
+ .nbss              0x080c          0xc build/default/production/joystick_library.o
                     0x080c                  _joystick_x_vector
                     0x080e                  _joystick_y_vector
-                    0x0810                  _x_pos
-                    0x0812                  _y_pos
+                    0x0810                  _x_vel
+                    0x0812                  _y_vel
+                    0x0814                  _x_pos
+                    0x0816                  _y_pos
 
-.ndata              0x0814          0x6
- .ndata             0x0814          0x4 build/default/production/plotter_library.o
-                    0x0814                  _raw_x
-                    0x0816                  _raw_y
- .ndata             0x0818          0x2 build/default/production/circular_buffer_library.o
-                    0x0818                  _AVERAGE_COUNT
+.ndata              0x0818          0x6
+ .ndata             0x0818          0x4 build/default/production/plotter_library.o
+                    0x0818                  _raw_x
+                    0x081a                  _raw_y
+ .ndata             0x081c          0x2 build/default/production/circular_buffer_library.o
+                    0x081c                  _AVERAGE_COUNT
 
-.nbss               0x081a          0x2
- .nbss              0x081a          0x2 build/default/production/plotter_library.o
-                    0x081a                  _run_test_pattern_flag
+.nbss               0x081e          0x2
+ .nbss              0x081e          0x2 build/default/production/plotter_library.o
+                    0x081e                  _run_test_pattern_flag
 
-.bss                0x081c        0x200
- .bss               0x081c        0x200 build/default/production/circular_buffer_library.o
-                    0x081c                  _inner_buffer
-                    0x091c                  _outer_buffer
+.bss                0x0820        0x200
+ .bss               0x0820        0x200 build/default/production/circular_buffer_library.o
+                    0x0820                  _inner_buffer
+                    0x0920                  _outer_buffer
 
 .ivt._IC1Interrupt
                   0x000016          0x2
@@ -1090,60 +1088,56 @@ __c30_signature
  .ivt._ADC1Interrupt
                   0x00002e          0x2 build/default/production/joystick_library.o
 
-.const              0x8360       0x136c load address 0x000360  
- .const             0x8360       0x1356 build/default/production/plotter_library.o
-                    0x8368                  _inner_angle_table
-                    0x8eb6                  _arctan_table
- .const             0x96b6          0x8 build/default/production/plotter_main.o
- .const             0x96be          0x8 build/default/production/joystick_library.o
- .const             0x96c6          0x6 build/default/production/lcd_library.o
-                    0x96c6                  _LCD_BASE_ADDRESS
-                    0x96c8                  _LCD_WRITE_ADDR
-                    0x96ca                  _LCD_READ_ADDR
+.const              0x8374       0x136c load address 0x000374  
+ .const             0x8374       0x1356 build/default/production/plotter_library.o
+                    0x837c                  _inner_angle_table
+                    0x8eca                  _arctan_table
+ .const             0x96ca          0x8 build/default/production/plotter_main.o
+ .const             0x96d2          0x8 build/default/production/joystick_library.o
+ .const             0x96da          0x6 build/default/production/lcd_library.o
+                    0x96da                  _LCD_BASE_ADDRESS
+                    0x96dc                  _LCD_WRITE_ADDR
+                    0x96de                  _LCD_READ_ADDR
 
-.text             0x0016cc        0x900
- .text            0x0016cc        0x4e8 build/default/production/plotter_library.o
-                  0x0016cc                  _init_servos
-                  0x001740                  _init_test_pattern_button
-                  0x00178e                  _set_servo
-                  0x0017ba                  _set_servo2
-                  0x0017f0                  _distance
-                  0x00190c                  _calculate_inner_angle
-                  0x001924                  _calculate_arctan_index
-                  0x00196a                  _calculate_outer_angle
-                  0x0019b6                  _move_to
-                  0x001a50                  _update_servo_angles
-                  0x001ae6                  _run_test_pattern
-                  0x001ba4                  _get_raw_x
-                  0x001bac                  _get_raw_y
- .text            0x001bb4        0x284 build/default/production/lcd_library.o
-                  0x001bb4                  _enable_I2C
-                  0x001bd6                  _setup_I2C_Baud
-                  0x001be4                  _lcd_send_command
-                  0x001c80                  _lcd_clear
-                  0x001c8c                  _lcd_init
-                  0x001cea                  _lcd_print_char
-                  0x001cf8                  _lcd_print_string
-                  0x001d1e                  _lcd_print_int
-                  0x001d30                  _lcd_set_double_height
-                  0x001d48                  _lcd_set_ROM_C
-                  0x001d66                  _lcd_set_cursor
-                  0x001d8e                  _setup_heartbeat_LED
-                  0x001d98                  _unsigned_int_to_string
- .text            0x001e38        0x102 build/default/production/circular_buffer_library.o
-                  0x001e38                  _init_buffers
-                  0x001e66                  _put_val_inner
-                  0x001ed0                  _put_val_outer
- .text            0x001f3a         0x4a build/default/production/joystick_library.o
-                  0x001f3a                  _init_joystick
-                  0x001f70                  _set_x_pos
-                  0x001f7a                  _set_y_pos
- .text            0x001f84         0x48 build/default/production/plotter_main.o
-                  0x001f84                  _main
+.text             0x0016e0        0x8f0
+ .text            0x0016e0        0x4d8 build/default/production/plotter_library.o
+                  0x0016e0                  _init_servos
+                  0x001754                  _init_test_pattern_button
+                  0x0017a2                  _set_servo
+                  0x0017ce                  _set_servo2
+                  0x001804                  _distance
+                  0x001920                  _calculate_inner_angle
+                  0x001938                  _calculate_arctan_index
+                  0x00197e                  _calculate_outer_angle
+                  0x0019ca                  _move_to
+                  0x001a64                  _update_servo_angles
+                  0x001afa                  _run_test_pattern
+ .text            0x001bb8        0x284 build/default/production/lcd_library.o
+                  0x001bb8                  _enable_I2C
+                  0x001bda                  _setup_I2C_Baud
+                  0x001be8                  _lcd_send_command
+                  0x001c84                  _lcd_clear
+                  0x001c90                  _lcd_init
+                  0x001cee                  _lcd_print_char
+                  0x001cfc                  _lcd_print_string
+                  0x001d22                  _lcd_print_int
+                  0x001d34                  _lcd_set_double_height
+                  0x001d4c                  _lcd_set_ROM_C
+                  0x001d6a                  _lcd_set_cursor
+                  0x001d92                  _setup_heartbeat_LED
+                  0x001d9c                  _unsigned_int_to_string
+ .text            0x001e3c        0x102 build/default/production/circular_buffer_library.o
+                  0x001e3c                  _init_buffers
+                  0x001e6a                  _put_val_inner
+                  0x001ed4                  _put_val_outer
+ .text            0x001f3e         0x5c build/default/production/plotter_main.o
+                  0x001f3e                  _main
+ .text            0x001f9a         0x36 build/default/production/joystick_library.o
+                  0x001f9a                  _init_joystick
 
-.dinit            0x001fcc         0x2c
- .dinit           0x001fcc         0x2c data_init
+.dinit            0x001fd0         0x2c
+ .dinit           0x001fd0         0x2c data_init
 
-.text             0x001ff8         0x20
- .text            0x001ff8         0x20 build/default/production/plotter_utils.o
-                  0x001ff8                  _delay_ms
+.text             0x001ffc         0x20
+ .text            0x001ffc         0x20 build/default/production/plotter_utils.o
+                  0x001ffc                  _delay_ms

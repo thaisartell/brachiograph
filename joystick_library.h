@@ -11,17 +11,21 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
+// Constants
+/**
+ * @brief Down-scaled values read from buffer to determine direction vectors.
+ * Vectors added to raw_x, raw_y respectively to control smooth arm movement.
+ */
+extern volatile int x_vel;
+extern volatile int y_vel;
 
-    extern volatile int x_vel;
-    extern volatile int y_vel;
-    extern volatile int joystick_x_vector;
-    extern volatile int joystick_y_vector;
-    
-    void init_joystick(void);
-    
-    int get_x_cursor(void);
-    
-    int get_y_cursor(void);
+//Functions
+/**
+ * @brief Initializes ADC1 to capture buffer values.
+ * Values from ADC1BUF0, ADC1BUF1 down-scaled and assigned to x_vel, y_vel respectively (for vector configuration).
+ * If not vector configuration, are assigned to raw_x, raw_y for absolute positioning.
+ */
+void init_joystick(void);
 
 
 #ifdef	__cplusplus
